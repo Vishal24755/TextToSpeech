@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App 07: Text-to-Speech Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-icon">🔊</div>
+      <div>
+        <h1>Text-to-Speech Converter</h1>
+        <p class="subtitle">Convert written text into natural speech with voice selection, pitch, and rate controls.</p>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="card">
+        <label for="textInput" class="form-label">Enter Text to Speak:</label>
+        <textarea id="textInput" class="form-textarea" rows="5" placeholder="Enter text here, then click 'Speak' to hear it spoken aloud...">Hello and welcome to the Text-to-Speech application! You can adjust my speaking rate and vocal pitch, or choose a different voice from the dropdown menu.</textarea>
+
+        <div id="toast" class="toast"></div>
+
+        <!-- Controls: Voice, Speed, Pitch -->
+        <div class="controls-panel">
+          <div class="control-col">
+            <label for="voiceSelect" class="form-label">Voice:</label>
+            <select id="voiceSelect" class="form-select">
+              <option value="">Loading system voices...</option>
+            </select>
+          </div>
+
+          <div class="control-col">
+            <label for="rateSlider" class="form-label">Speed / Rate: <span id="rateVal" class="val-pill">1.0x</span></label>
+            <input type="range" id="rateSlider" min="0.5" max="2.0" step="0.1" value="1.0" class="form-range">
+          </div>
+
+          <div class="control-col">
+            <label for="pitchSlider" class="form-label">Vocal Pitch: <span id="pitchVal" class="val-pill">1.0</span></label>
+            <input type="range" id="pitchSlider" min="0.5" max="2.0" step="0.1" value="1.0" class="form-range">
+          </div>
+        </div>
+
+        <div class="playback-buttons-row">
+          <button id="btnSpeak" class="btn btn-primary btn-lg">▶️ Speak</button>
+          <button id="btnPause" class="btn btn-secondary btn-lg">⏸️ Pause</button>
+          <button id="btnResume" class="btn btn-secondary btn-lg">⏯️ Resume</button>
+          <button id="btnStop" class="btn btn-danger btn-lg">⏹️ Stop</button>
+          <button id="btnSample" class="btn btn-secondary">Load Sample Text</button>
+          <button id="btnClear" class="btn btn-outline-danger">Clear</button>
+        </div>
+
+        <div class="info-callout">
+          <strong>100% Offline:</strong> Speech synthesis uses the native offline voices installed directly inside your operating system (e.g. Windows Microsoft David, Zira, Mark). No internet connection is required!
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>App 07: Text-to-Speech Converter &bull; Part of Text and Speech Analysis Suite</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
